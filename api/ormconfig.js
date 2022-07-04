@@ -1,3 +1,4 @@
+require("reflect-metadata")
 const typeorm = require("typeorm");
 EntitySchema = typeorm.EntitySchema;
 
@@ -11,11 +12,11 @@ const config = {
   database: "testingdb",
   synchronize: true,
   logging: false,
-  entities: ["./src/entities/table/*.ts"],
-  migrations: ["./src/migration/*{.ts,.js}"],
-  cli: {
-    migrationsDir: "./src/migration",
-  },
+  // entities: ["./src/entities/table/*.ts"],
+  // migrations: ["./src/migration/*{.ts,.js}"],
+  // cli: {
+  //   migrationsDir: "./src/migration",
+  // },
 };
 
 module.exports = new typeorm.DataSource(config);
