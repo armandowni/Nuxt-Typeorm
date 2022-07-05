@@ -7,11 +7,10 @@ function handleRequest(
   handler: any,
   middlewares: any = {}
 ) {
-  console.log("handleRequest");
-  // console.log(targetRoute);
+  // console.log("handleRequest");
 
   return function (req: Request, res: Response, next: Function) {
-    console.log(req.baseUrl);
+    console.log("url" + req.url);
 
     (async () => {
       // console.log(handler);
@@ -71,7 +70,6 @@ function findHandlers(baseDir: string, basePath: string) {
   });
 
   for (const dir of dirs) {
-    // console.log(` ${dir}`);
     if (dir.isDirectory()) {
       let name = dir.name;
       const isParam = name.startsWith("[") && name.endsWith("]");
@@ -91,6 +89,7 @@ function findHandlers(baseDir: string, basePath: string) {
     } else if (path.resolve(baseDir, dir.name) !== __filename) {
       const modulePath = path.resolve(baseDir, dir.name);
       const { get, post, put, del, middlewares } = require(modulePath);
+      // console.log(modulePath);
 
       let name = dir.name.slice(0, dir.name.length - 3);
       const isParam = name.startsWith("[") && name.endsWith("]");
@@ -100,7 +99,7 @@ function findHandlers(baseDir: string, basePath: string) {
       const route = name === "index" ? "/" : isParam ? `/:${name}` : `/${name}`;
 
       const options = { GET: get, POST: post, PUT: put, DELETE: del };
-      // console.log(`${basePath}${route}`, get);
+      // console.log(`${route}`, get);
 
       router.get(
         route,
