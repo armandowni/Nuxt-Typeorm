@@ -1,7 +1,12 @@
 import { Request, Response } from "express";
+import { getRepository } from "typeorm";
+import { Test } from "../db/entities/Test";
 
 export async function get(req: Request, res: Response) {
-  // console.log(User);
+  const hello = getRepository(Test);
+  const result = await hello.findAndCount();
+  console.log(result);
+  
 
   res.send("success get hello");
 }

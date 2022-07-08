@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { User } from "../../entity/User";
+import { User } from "../../db/entities/User";
 
 export async function get(req: Request, res: Response) {
   // getConnection()

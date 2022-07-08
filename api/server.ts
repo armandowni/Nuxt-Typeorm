@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import * as router from "./src/index";
-import {AppDataSource} from "./src/data-source"
+import {AppDataSource} from "./data-source"
 
 
 async function server() {
