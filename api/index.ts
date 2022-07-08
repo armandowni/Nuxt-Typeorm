@@ -13,7 +13,7 @@ app.use("/v1", (req, res) => {
   server()
     .then((s) => {
       const { apiRouter } = s.httpRoutes();
-
+      
       apiRouter(req, res,()=>{});
     })
     .catch((err) => {

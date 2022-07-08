@@ -2,15 +2,17 @@ import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
 
 @Entity()
 export class User {
+
     @PrimaryGeneratedColumn()
-    id: number | undefined
+    id: number
 
     @Column()
-    firstName: string | undefined
+    firstName: string
 
     @Column()
-    lastName: string | undefined
+    lastName: string
 
     @Column()
-    isActive: boolean | undefined
+    age: number
+
 }

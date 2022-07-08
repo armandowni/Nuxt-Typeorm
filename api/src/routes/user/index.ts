@@ -1,7 +1,12 @@
 import { Router, Request, Response } from "express";
+import { User } from "../../entity/User";
 
 export async function get(req: Request, res: Response) {
-  // console.log(User);
-
+  // getConnection()
+  //   .manager.getRepository(User)
+  //   .find()
+  //   .then((result) => {
+  //     console.log(result);
+  //   });
   res.send("success get user");
 }

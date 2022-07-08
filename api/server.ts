@@ -1,13 +1,13 @@
 import "reflect-metadata";
 import * as router from "./src/index";
-import { DataSource } from "typeorm";
-import { ormconfig } from "./ormconfig";
+import {AppDataSource} from "./src/data-source"
+
 
 async function server() {
-  const AppDataSource = new DataSource(ormconfig);
-
   await AppDataSource.initialize()
-    .then(() => console.log(""))
+    .then((connection) => {
+      console.log(`server is run`);
+    })
     .catch((err) =>
       console.error("Error during Data Source initialization:", err)
     );
