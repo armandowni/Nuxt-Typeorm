@@ -1,14 +1,13 @@
 import { Request, Response } from "express";
-import { getRepository } from "typeorm";
-import { Test } from "../db/entities/Test";
+import { AppDataSource } from "../../data-source";
+import Test from "../db/entities/Test";
 
 export async function get(req: Request, res: Response) {
-  const hello = getRepository(Test);
+  const hello = AppDataSource.getRepository(Test);
   const result = await hello.findAndCount();
-  console.log(result);
-  
+  // console.log(result[0]);
 
-  res.send("success get hello");
+  res.send(result[0]);
 }
 
 export async function post(req: Request, res: Response) {

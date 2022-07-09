@@ -5,7 +5,7 @@ import {AppDataSource} from "./data-source"
 
 async function server() {
   await AppDataSource.initialize()
-    .then((connection) => {
+    .then((conn) => {
       console.log(`server is run`);
     })
     .catch((err) =>
