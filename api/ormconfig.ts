@@ -1,6 +1,5 @@
 import { DataSourceOptions } from "typeorm";
 import { entities } from "./src/db";
-import Test from "./src/db/entities/Test";
 
 export const config: DataSourceOptions = {
   name: "default",
@@ -12,6 +11,6 @@ export const config: DataSourceOptions = {
   database: "testingdb",
   synchronize: false,
   logging: false,
-  entities: [Test],
-  migrations: ["src/migration/*.{ts,js}"],
+  entities: entities,
+  migrations: ["src/migration/**/*.ts"],
 };

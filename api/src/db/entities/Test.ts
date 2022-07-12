@@ -1,6 +1,6 @@
-var EntitySchema = require("typeorm").EntitySchema;
+import { EntitySchema } from "typeorm";
 
-module.exports = new EntitySchema({
+export const Test = new EntitySchema({
   schema: "nuxtTypeorm",
   name: "Test",
   tableName: "test",
@@ -12,6 +12,9 @@ module.exports = new EntitySchema({
     },
     name: {
       type: "varchar",
+    },
+    age: {
+      type: "int8",
     },
   },
 });

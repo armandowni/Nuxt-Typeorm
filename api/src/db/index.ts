@@ -1,3 +1,3 @@
-import { User } from "./entities/User";
+import { Test } from "./entities/Test";
 
-export const entities = [User];
+export const entities = [Test];

@@ -1,6 +1,5 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  target: "static",
   head: {
     title: "nuxt-typeorm",
     htmlAttrs: {
@@ -30,12 +29,17 @@ export default {
     "@nuxt/typescript-build",
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
+    // "./api/index.ts",
   ],
+
+  generate: {},
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
-  serverMiddleware: ["~/api/index"],
+  build: {
+    watch: ["api"],
+  },
+  serverMiddleware: ["./api/index"],
 };

@@ -9,12 +9,14 @@ app.use(cors());
 app.use(urlencoded({ extended: false }));
 app.use(json({ limit: "10mb" }));
 
+const serve = server();
+
 app.use("/v1", (req, res) => {
-  server()
+  serve
     .then((s) => {
       const { apiRouter } = s.httpRoutes();
-      
-      apiRouter(req, res,()=>{});
+
+      apiRouter(req, res, () => {});
     })
     .catch((err) => {
       console.log(err);
