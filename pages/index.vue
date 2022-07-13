@@ -1,11 +1,24 @@
 <template>
-  <Tutorial/>
+  <div>
+    <!-- <Tutorial /> -->
+    <li v-for="(data, index) in test" :key="index">
+      {{ data.name }} ({{ data.age }})
+    </li>
+  </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue, { onMounted } from "vue";
+import { get } from "~/endpoints";
 
-export default Vue.extend({
-  name: 'IndexPage'
-})
+export default {
+  data() {
+    return {
+      test: [],
+    };
+  },
+  async fetch() {
+    this.test = await get("hello");
+  },
+};
 </script>

@@ -10,7 +10,7 @@ function handleRequest(
   // console.log("handleRequest");
 
   return function (req: Request, res: Response, next: Function) {
-    console.log("url" + req.url);
+    // console.log("url" + req.url);
 
     (async () => {
       // console.log(handler);
