@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 import { AppDataSource } from "../../data-source";
-import {Test }from "../db/entities/Test";
+import {Test }from "../../src/db/entities/Test";
 
 export async function get(req: Request, res: Response) {
   const hello = AppDataSource.getRepository(Test);
-  const result = await hello.findAndCount();
+  const result = await hello.find();
   // console.log(result[0]);
 
   res.send(result);

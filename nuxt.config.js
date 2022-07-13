@@ -1,5 +1,6 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  target: "static",
   head: {
     title: "nuxt-typeorm",
     htmlAttrs: {
@@ -32,14 +33,15 @@ export default {
     // "./api/index.ts",
   ],
 
-  generate: {},
+  generate: {
+    include: ["./api"],
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    watch: ["api"],
-  },
+  build: {},
+  watch: ["./api/express"],
   serverMiddleware: ["./api/index"],
 };
