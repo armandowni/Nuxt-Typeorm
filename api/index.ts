@@ -24,5 +24,4 @@ app.use("/v1", (req, res) => {
     });
 });
 
-export const path = "/api";
-export const handler = app;
+export default { path: "/api", handler: app };

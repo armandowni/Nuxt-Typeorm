@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { AppDataSource } from "../../data-source";
-import {Test }from "../../src/db/entities/Test";
+import { Test } from "../../src/db/entities/Test";
 
 export async function get(req: Request, res: Response) {
   const hello = AppDataSource.getRepository(Test);
