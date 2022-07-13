@@ -1,9 +1,6 @@
 <template>
   <div>
-    <!-- <Tutorial /> -->
-    <li v-for="(data, index) in test" :key="index">
-      {{ data.name }} ({{ data.age }})
-    </li>
+    <Tutorial />
   </div>
 </template>
 

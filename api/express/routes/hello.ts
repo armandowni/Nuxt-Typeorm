@@ -13,5 +13,15 @@ export async function get(req: Request, res: Response) {
 export async function post(req: Request, res: Response) {
   // console.log(User);
 
-  res.send("success post hello");
+  res.send("success de; hello");
+}
+export async function put(req: Request, res: Response) {
+  // console.log(User);
+
+  res.send("success put hello");
+}
+export async function del(req: Request, res: Response) {
+  // console.log(User);
+
+  res.send("success delete hello");
 }
