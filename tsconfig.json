@@ -1,9 +1,16 @@
 {
   "compilerOptions": {
     "target": "ES5",
+    "jsx": "preserve",
     "module": "CommonJS",
     "moduleResolution": "Node",
-    "lib": ["ESNext", "ESNext.AsyncIterable", "DOM", "ES5", "ES6"],
+    "lib": [
+      "ESNext",
+      "ESNext.AsyncIterable",
+      "DOM",
+      "ES5",
+      "ES6"
+    ],
     "esModuleInterop": true,
     "allowJs": true,
     "sourceMap": true,
@@ -13,10 +20,21 @@
     "emitDecoratorMetadata": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./*"],
-      "@/*": ["./*"]
+      "~/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./*"
+      ]
     },
-    "types": ["@nuxt/types", "@types/node"]
+    "types": [
+      "@nuxt/types",
+      "@types/node"
+    ]
   },
-  "exclude": ["node_modules", ".nuxt", "dist"],
+  "exclude": [
+    "node_modules",
+    ".nuxt",
+    "dist"
+  ],
 }

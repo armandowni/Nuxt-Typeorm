@@ -1,12 +1,13 @@
 <template>
   <div>
-    <Tutorial />
+    <Tutorial :dataTable="{test}"></Tutorial>
   </div>
 </template>
 
 <script lang="ts">
-import Vue, { onMounted } from "vue";
-import { get } from "~/endpoints";
+import Tutorial from '../components/Tutorial.vue'
+import { useApi } from "../endpoints"
+const api = useApi()
 
 export default {
   data() {
@@ -14,8 +15,16 @@ export default {
       test: [],
     };
   },
+  components: {
+    Tutorial
+  },
   async fetch() {
-    this.test = await get("hello");
+    await api.get('/hello').then((result) => {
+      // console.log(result);
+
+      this.test = result[0]
+    }).catch(err => console.log(err)
+    );
   },
 };
 </script>

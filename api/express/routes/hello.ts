@@ -4,7 +4,7 @@ import { Test } from "../../src/db/entities/Test";
 
 export async function get(req: Request, res: Response) {
   const hello = AppDataSource.getRepository(Test);
-  const result = await hello.find();
+  const result = await hello.findAndCount();
   // console.log(result[0]);
 
   res.send(result);
