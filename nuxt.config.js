@@ -13,6 +13,10 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
+  server: {
+    host: "0.0.0.0",
+    port: "8000",
+  },
   ssr: true,
   target: "static",
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -30,7 +34,7 @@ export default {
     "@nuxt/typescript-build",
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
-    // "./api/index.ts",
+    "@nuxtjs/fontawesome",
   ],
 
   generate: {},
@@ -39,6 +43,5 @@ export default {
   modules: ["~/modules/api"],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
   watch: ["~/api/express/routes"],
 };

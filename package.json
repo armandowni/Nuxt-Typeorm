@@ -11,6 +11,7 @@
     "migration:run": "npx typeorm-ts-node-esm schema:sync -d ./api/data-source.ts"
   },
   "dependencies": {
+    "@nuxtjs/fontawesome": "^1.1.2",
     "axios": "^0.27.2",
     "core-js": "^3.19.3",
     "cors": "^2.8.5",
