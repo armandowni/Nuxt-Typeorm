@@ -20,7 +20,8 @@ $ yarn generate
 ## Build Setup Typeorm
 
 ```bash
-
+**NOTE** 
+before migration:generate please make folder in api/src name migration
 
 # automatic build migration
 $ yarn migration:generate
@@ -43,3 +44,6 @@ https://typeorm.io/
 # express
 https://expressjs.com/
 ```
+
+
+## for example watch this example -> 
