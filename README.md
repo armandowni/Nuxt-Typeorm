@@ -19,9 +19,26 @@ $ yarn generate
 
 ## Build Setup Typeorm
 
+```bash
+
+# automatic build migration
+$ yarn migration:generate
+
+# run migration
 $ yarn migration:sync
-$ yarn migration:run
 
 ```
+
 # for another documentation
+
+```bash
+
+# nuxt
+https://nuxtjs.org/
+
+# typeorm
+https://typeorm.io/
+
+# express
+https://expressjs.com/
 ```
