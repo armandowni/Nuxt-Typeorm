@@ -9,15 +9,11 @@
         </tr>
       </thead>
       <tbody>
-        <div
-          v-for="(data, index) in dataTable.resultDataTable"
-          :key="index"
-          class="grid grid-cols-3 gap-2"
-        >
-          <div class="border-r-2 border-b-2">{{ index + 1 }}</div>
-          <div class="border-r-2 border-b-2">{{ data.name }}</div>
-          <div class="border-b-2">{{ data.age }}</div>
-        </div>
+        <!-- <tr v-for="(data, index) in dataTable.resultDataTable" :key="index" class="grid grid-cols-3 gap-2">
+          <td class="border-r-2 border-b-2">{{ index + 1 }}</td>
+          <td class="border-r-2 border-b-2">{{ data.name }}</td>
+          <td class="border-b-2">{{ data.age }}</td>
+        </tr> -->
       </tbody>
     </table>
     <!-- <div class="form">

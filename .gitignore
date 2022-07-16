@@ -90,6 +90,7 @@ sw.*
 *.swp
 
 # migration
+api/src/migration/*.ts
 
 # ormconfig
-README.md
+api/ormconfig.ts
