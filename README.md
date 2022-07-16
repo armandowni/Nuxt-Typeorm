@@ -1,4 +1,4 @@
-# nuxt-typeorm
+# Template Project Nuxt-Typeorm-Express
 
 ## Build Setup Nuxt
 
@@ -29,7 +29,7 @@ $ yarn migration:sync
 
 ```
 
-# for another documentation
+# For documentation
 
 ```bash
 

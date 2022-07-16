@@ -60,8 +60,10 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { useApi } from "~/endpoints";
+import { useApi } from "../endpoints";
+
 const api = useApi();
+
 export default Vue.extend({
   data() {
     return {
