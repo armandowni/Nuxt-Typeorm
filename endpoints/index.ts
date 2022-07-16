@@ -7,14 +7,14 @@ export function useApi(config?: any) {
 
   const get = async (url: string, query?: string) => {
     base_path = base_path + url;
-    console.log("test");
+    // console.log("test");
 
     const result = await axios
       .get(base_path)
       .then((result) => result.data)
       .catch((err) => err);
     // const result = await axios.get(base_path);
-    console.log("test1");
+    // console.log("test1");
 
     return result;
   };
