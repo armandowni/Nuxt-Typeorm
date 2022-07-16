@@ -71,7 +71,7 @@ export default Vue.extend({
     };
   },
   async fetch() {
-    this.resultDataTable = await api.get("/hello");
+    this.resultDataTable = await api.get("/test");
     this.resultDataTable = this.resultDataTable[0];
   },
 });
