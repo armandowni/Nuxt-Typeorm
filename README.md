@@ -21,15 +21,16 @@ $ yarn generate
 
 ```bash
 
+
 # automatic build migration
 $ yarn migration:generate
 
 # run migration
-$ yarn migration:sync
+$ yarn migration:run
 
 ```
 
-# For documentation
+## For documentation
 
 ```bash
 

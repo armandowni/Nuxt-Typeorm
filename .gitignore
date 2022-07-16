@@ -93,4 +93,4 @@ sw.*
 api/ormconfig.ts
 
 # migration
-api/migration/**/*.ts
+api/src/migration/*.ts

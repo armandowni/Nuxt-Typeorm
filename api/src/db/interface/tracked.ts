@@ -1,19 +1,16 @@
-import { EntitySchema } from "typeorm";
+import { EntitySchema, EntitySchemaColumnOptions } from "typeorm";
 
-export const BaseSchema = new EntitySchema({
-  name: "BaseSchema",
-  columns: {
-    created: {
-      type: 'timestamp with time zone',
-      createDate: true
-    },
-    updated: {
-      type: 'timestamp with time zone',
-      updateDate: true
-    },
-    deleted: {
-      type: 'timestamp with time zone',
-      deleteDate: true
-    },
-  },
-});
+export const BaseSchema = {
+  created: {
+    type: 'timestamp with time zone',
+    createDate: true
+  } as EntitySchemaColumnOptions,
+  updated: {
+    type: 'timestamp with time zone',
+    updateDate: true
+  } as EntitySchemaColumnOptions,
+  deleted: {
+    type: 'timestamp with time zone',
+    deleteDate: true
+  } as EntitySchemaColumnOptions
+}

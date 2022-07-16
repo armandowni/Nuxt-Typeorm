@@ -1,4 +1,5 @@
 import { EntitySchema } from "typeorm";
+import { BaseSchema } from "../interface/tracked";
 
 export const Test = new EntitySchema({
   schema: "nuxtTypeorm",
@@ -17,5 +18,6 @@ export const Test = new EntitySchema({
     age: {
       type: "int8",
     },
+    ...BaseSchema
   },
 });
