@@ -1,12 +1,19 @@
-import { CreateDateColumn, DeleteDateColumn, UpdateDateColumn } from "typeorm";
+import { EntitySchema } from "typeorm";
 
-export abstract class TrackedEntity {
-  @CreateDateColumn({ select: false })
-  created?: Date;
-
-  @UpdateDateColumn({ select: false })
-  updated?: Date;
-
-  @DeleteDateColumn({ select: false, nullable: true })
-  deleted?: Date;
-}
+export const BaseSchema = new EntitySchema({
+  name: "BaseSchema",
+  columns: {
+    created: {
+      type: 'timestamp with time zone',
+      createDate: true
+    },
+    updated: {
+      type: 'timestamp with time zone',
+      updateDate: true
+    },
+    deleted: {
+      type: 'timestamp with time zone',
+      deleteDate: true
+    },
+  },
+});
