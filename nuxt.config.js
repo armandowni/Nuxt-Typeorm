@@ -37,9 +37,12 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
     "@nuxtjs/fontawesome",
+    '@nuxtjs/vuetify',
   ],
 
   generate: {},
+
+  vuetify: {},
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ["~/modules/api"],

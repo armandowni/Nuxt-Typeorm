@@ -1,30 +1,19 @@
 <template>
   <div class="flex w-full border-2 rounded-md p-5 gap-5">
-    <table class="flex flex-col border-2 flex-1">
-      <thead class="border-b-2">
-        <tr class="grid grid-cols-3 gap-2">
-          <div class="border-r-2">No.</div>
-          <div class="border-r-2 text-left">Name</div>
-          <div>Age</div>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- <tr v-for="(data, index) in dataTable.resultDataTable" :key="index" class="grid grid-cols-3 gap-2">
-          <td class="border-r-2 border-b-2">{{ index + 1 }}</td>
-          <td class="border-r-2 border-b-2">{{ data.name }}</td>
-          <td class="border-b-2">{{ data.age }}</td>
-        </tr> -->
-      </tbody>
-    </table>
-    <!-- <div class="form">
+    <!-- {{ dataTable }} -->
+    <div class="border-2 border-black rounded-md">
+      <v-data-table :headers="headers" :items="data" :items-per-page="5" class="elevation-1">
+      </v-data-table>
+    </div>
+    <div class="form border-2 border-black rounded-md p-10">
       Want to Try?
       <form action="" class="flex flex-col items-start gap-2">
-        <Input v-bind:placeholder="Name" />
-        <Input v-bind:placeholder="Age" />
+        <Input placeholder="test" />
+        <Input placeholder="test" />
 
         <button class="border-2">Submit</button>
       </form>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -34,5 +23,20 @@ export default Vue.extend({
   props: {
     dataTable: [],
   },
+  mounted() {
+    this.data = this.dataTable.resultDataTable
+  },
+  data() {
+    return {
+      data: [],
+      headers: [{
+        text: "Name",
+        value: 'name',
+      }, {
+        text: "Age",
+        value: 'age',
+      }]
+    }
+  }
 });
 </script>
