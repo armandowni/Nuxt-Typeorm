@@ -1,9 +1,10 @@
 import axios from "axios";
+import { SERVER_HOST, SERVER_PORT } from "../static/const";
 
 const API_VER = "v1";
 
 export function useApi(config?: any) {
-  let base_path = `http://192.168.100.97:8000/api/${API_VER}`;
+  let base_path = `http://${SERVER_HOST}:${SERVER_PORT}/api/${API_VER}`;
 
   const get = async (url: string, query?: string) => {
     base_path = base_path + url;

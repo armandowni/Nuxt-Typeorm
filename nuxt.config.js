@@ -1,3 +1,5 @@
+import { SERVER_HOST, SERVER_PORT } from "./static/const";
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -14,7 +16,8 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
   server: {
-    port: "8000",
+    host: SERVER_HOST,
+    port: SERVER_PORT,
   },
   ssr: true,
   target: "static",
