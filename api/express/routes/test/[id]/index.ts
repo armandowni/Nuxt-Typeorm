@@ -15,9 +15,11 @@ export async function put(req: Request, res: Response) {
   res.send({ message: "Success update data" });
 }
 export async function del(req: Request, res: Response) {
-  const id = req.params.id;
+  const id = parseInt(req.params.id);
+  let data = await testRepository.findOne({ where: { id: id } });
 
-  await testRepository.softDelete(id)
+  if (!data) throw new Error("404 data not found");
+  await testRepository.softDelete(data.id);
 
   res.send({ message: "success delete data" });
 }

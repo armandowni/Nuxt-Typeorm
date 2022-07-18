@@ -19,6 +19,37 @@ export function useApi(config?: any) {
 
     return result;
   };
+  const post = async (url: string, data: any) => {
+    base_path = base_path + url;
 
-  return { get };
+    const result = await axios
+      .post(base_path, data)
+      .then((result) => result.data)
+      .catch((err) => err);
+
+    return result;
+  };
+  const put = async (url: string, data: any) => {
+    base_path = base_path + url;
+
+    const result = await axios
+      .put(base_path, data)
+      .then((result) => result.data)
+      .catch((err) => err);
+
+    // return "";
+    return result;
+  };
+  const del = async (url: string) => {
+    base_path = base_path + url;
+    const result = await axios
+      .delete(base_path)
+      .then((result) => result.data)
+      .catch((err) => err);
+
+    // return "";
+    return result;
+  };
+
+  return { get, post, put, del };
 }
