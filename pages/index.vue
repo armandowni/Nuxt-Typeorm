@@ -56,10 +56,13 @@
                   <Input placeholder="Age" v-model="dataForm.age" name="age" />
 
                   <div class="flex gap-5" id="buttons">
-                    <button class="border-2" v-on:click="delData(dataForm)">
+                    <button class="" v-on:click="delData(dataForm)">
                       Submit
                     </button>
-                    <button class="border-2" v-on:click="cancel()">
+                    <button
+                      class="bg-blue-500 rounded-md text-white py-3 px-5"
+                      v-on:click="cancel()"
+                    >
                       Cancel
                     </button>
                   </div>
@@ -72,22 +75,14 @@
               <v-card-title class="">
                 Are you sure want to delete {{ dataForm?.name }}
               </v-card-title>
-
-              <div class="pb-5 px-5">
-                <div
-                  action=""
-                  class="flex flex-col justify-center items-center gap-2 w-22"
-                >
-                  <div class="flex gap-5" id="buttons">
-                    <button class="border-2" v-on:click="delData(dataForm)">
-                      Submit
-                    </button>
-                    <button class="border-2" v-on:click="cancel()">
-                      Cancel
-                    </button>
-                  </div>
+              <v-card-actions>
+                <div class="flex gap-5" id="buttons">
+                  <button class="border-2" v-on:click="delData(dataForm)">
+                    Submit
+                  </button>
+                  <button class="border-2" v-on:click="cancel()">Cancel</button>
                 </div>
-              </div>
+              </v-card-actions>
             </v-card>
           </Modal>
 
