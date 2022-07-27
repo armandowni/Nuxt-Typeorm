@@ -11,8 +11,5 @@ export default {
   props: {
     dialog: Boolean,
   },
-  data() {
-    return {};
-  },
 };
 </script>

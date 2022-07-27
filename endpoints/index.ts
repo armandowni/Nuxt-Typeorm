@@ -4,14 +4,14 @@ import { SERVER_HOST, SERVER_PORT } from "../static/const";
 const API_VER = "v1";
 
 export function useApi(config?: any) {
-  let base_path = `http://${SERVER_HOST}:${SERVER_PORT}/api/${API_VER}`;
+  const base_path = `http://${SERVER_HOST}:${SERVER_PORT}/api/${API_VER}`;
 
   const get = async (url: string, query?: string) => {
-    base_path = base_path + url;
+    const path =  base_path + url;
     // console.log("test");
 
     const result = await axios
-      .get(base_path)
+      .get(path)
       .then((result) => result.data)
       .catch((err) => err);
     // const result = await axios.get(base_path);
@@ -20,20 +20,20 @@ export function useApi(config?: any) {
     return result;
   };
   const post = async (url: string, data: any) => {
-    base_path = base_path + url;
-
+    const path =  base_path + url;
+    
     const result = await axios
-      .post(base_path, data)
+      .post(path, data)
       .then((result) => result.data)
       .catch((err) => err);
 
     return result;
   };
   const put = async (url: string, data: any) => {
-    base_path = base_path + url;
+    const path =  base_path + url;
 
     const result = await axios
-      .put(base_path, data)
+      .put(path, data)
       .then((result) => result.data)
       .catch((err) => err);
 
@@ -41,9 +41,9 @@ export function useApi(config?: any) {
     return result;
   };
   const del = async (url: string) => {
-    base_path = base_path + url;
+    const path =  base_path + url;
     const result = await axios
-      .delete(base_path)
+      .delete(path)
       .then((result) => result.data)
       .catch((err) => err);
 

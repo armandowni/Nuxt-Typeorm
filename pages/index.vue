@@ -40,23 +40,40 @@
           <Modal :dialog="dialogAdd || dialogEdit">
             <v-card>
               <v-card-title class="">
-                {{ !dataForm ? "Add" : "Edit" }} Data
+                {{ !dataForm.name || !dataForm.age ? "Add" : "Edit" }} Data
               </v-card-title>
 
               <div class="pb-5 px-5">
-                <form
-                  action=""
+                <div
                   class="flex flex-col justify-center items-center gap-2 w-22"
                 >
-                  <Input
-                    placeholder="Name"
-                    v-model="dataForm.name"
-                    name="name"
-                  />
-                  <Input placeholder="Age" v-model="dataForm.age" name="age" />
+                  <span class="text-red-500">{{ errorMessage }}</span>
+                  <div class="border-2 border-gray-200 rounded-md">
+                    <input
+                      type="text"
+                      placeholder="Name"
+                      v-model="dataForm.name"
+                      name="name"
+                      class="py-1 pl-3"
+                    />
+                  </div>
+                  <div class="border-2 border-gray-200 rounded-md">
+                    <input
+                      type="number"
+                      placeholder="Age"
+                      v-model="dataForm.age"
+                      name="age"
+                      class="py-1 pl-3"
+                    />
+                  </div>
 
                   <div class="flex gap-5" id="buttons">
-                    <button class="" v-on:click="delData(dataForm)">
+                    <button
+                      class=""
+                      v-on:click="
+                        isAddForm ? addData(dataForm) : editData(dataForm)
+                      "
+                    >
                       Submit
                     </button>
                     <button
@@ -66,7 +83,7 @@
                       Cancel
                     </button>
                   </div>
-                </form>
+                </div>
               </div>
             </v-card>
           </Modal>
@@ -110,23 +127,26 @@ export default {
       dialogEdit: false,
       dialogDel: false,
       dataForm: {
-        name: "",
-        age: "",
+        name: null,
+        age: null,
       },
+      isAddForm: false,
+      errorMessage: "",
     };
   },
   methods: {
     addDialog() {
       this.dialogAdd = true;
+      this.isAddForm = true;
     },
     editDialog(data: any) {
       delete data.created;
       delete data.updated;
       delete data.deleted;
-      console.log(data);
 
       this.dataForm = data;
       this.dialogEdit = true;
+      this.isAddForm = false;
     },
     delDialog(data: any) {
       delete data.created;
@@ -135,15 +155,30 @@ export default {
       this.dataForm = data;
       this.dialogDel = true;
     },
-    addData(data: any) {
-      console.log(data);
-      // await api.post(`/test`);
-      // this.cancel();
+    async addData(data: any) {
+      if (!data.age || !data.name) {
+        this.errorMessage = "Name or age cannot empty"
+        setTimeout(() => {
+          this.errorMessage = ""
+        }, 5000);
+        return
+      }
+      data.age = parseInt(data.age);
+
+      await api.post(`/test`, data);
+      this.cancel();
     },
     async editData(data: any) {
-      console.log(data);
-      // await api.put(`/test/${data?.id}`);
-      // this.cancel();
+      if (!data.age || !data.name) {
+        this.errorMessage = "Name or age cannot empty"
+        setTimeout(() => {
+          this.errorMessage = ""
+        }, 5000);
+        return
+      }
+      data.age = parseInt(data.age);
+      await api.put(`/test/${data?.id}`, data);
+      this.cancel();
     },
     async delData(data: any) {
       await api.del(`/test/${data?.id}`);
@@ -153,6 +188,11 @@ export default {
       this.dialogAdd = false;
       this.dialogEdit = false;
       this.dialogDel = false;
+
+      this.dataForm.name = null;
+      this.dataForm.age = null;
+
+      this.getData()
     },
     async getData() {
       this.resultDataTable = await api.get("/test");
