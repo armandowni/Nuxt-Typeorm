@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SERVER_HOST, SERVER_PORT } from "../static/const";
+import { SERVER_HOST, SERVER_PORT } from "../modules/const";
 
 const API_VER = "v1";
 

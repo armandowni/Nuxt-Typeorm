@@ -1,4 +1,4 @@
-import { SERVER_HOST, SERVER_PORT } from "./static/const";
+import { SERVER_HOST, SERVER_PORT } from "./modules/const";
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -37,8 +37,11 @@ export default {
     "@nuxtjs/fontawesome",
     "@nuxtjs/vuetify",
   ],
-  generate: {},
-  vuetify: {},
+  build: {
+    optimization: {
+      minimize: true,
+    },
+  },
   fontawesome: {
     component: "Fa",
     suffix: false,

@@ -1,5 +1,5 @@
 import { DataSourceOptions } from "typeorm";
-import { DB_CONFIG_DATABASE, DB_CONFIG_HOST, DB_CONFIG_PASSWORD, DB_CONFIG_PORT, DB_CONFIG_USER } from "../static/const";
+import { DB_CONFIG_DATABASE, DB_CONFIG_HOST, DB_CONFIG_PASSWORD, DB_CONFIG_PORT, DB_CONFIG_USER } from "../modules/const";
 import { entities } from "./src/db";
 
 export const config: DataSourceOptions = {
