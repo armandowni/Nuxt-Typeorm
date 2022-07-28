@@ -4,6 +4,7 @@ import {
   DB_CONFIG_HOST,
   DB_CONFIG_PASSWORD,
   DB_CONFIG_PORT,
+  DB_CONFIG_SSL,
   DB_CONFIG_USER,
 } from "../modules/const";
 import { entities } from "./src/db";
@@ -20,10 +21,5 @@ export const config: DataSourceOptions = {
   logging: false,
   entities: entities,
   migrations: ["src/migration/**/*.ts"],
-  ssl: true,
-  extra: {
-    ssl: {
-      rejectUnauthorized: false,
-    },
-  },
+  ssl: DB_CONFIG_SSL,
 };
