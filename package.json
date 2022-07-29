@@ -9,6 +9,7 @@
     "generate": "nuxt generate",
     "migration:generate": "npx typeorm-ts-node-esm migration:generate ./api/src/migration/migration -d ./api/data-source.ts",
     "migration:run": "npx typeorm-ts-node-esm schema:sync -d ./api/data-source.ts",
+    "heroku-prebuild":"nuxt build & nuxt generate",
     "heroku-postbuild": "nuxt start"
   },
   "dependencies": {
