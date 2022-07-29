@@ -1,4 +1,4 @@
-import { SERVER_HOST, SERVER_PORT } from "./modules/const";
+import { SERVER_HOST, SERVER_PORT } from "./api/const";
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -14,10 +14,6 @@ export default {
       { name: "format-detection", content: "telephone=no" },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-  },
-  server: {
-    host: SERVER_HOST,
-    port: SERVER_PORT,
   },
   ssr: true,
   target: "static",
