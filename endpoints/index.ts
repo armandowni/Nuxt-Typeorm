@@ -2,12 +2,14 @@ import axios from "axios";
 
 const API_VER = "v1";
 const PORT = 3000;
-const HOST = window.location.hostname ||`localhost:${PORT}`;
+let HOST = "";
 
 export function useApi(config?: any) {
-  console.log(process.env);
-  
-  const base_path = `http://${HOST}:${PORT}/api/${API_VER}`;
+  HOST = process.env.HOST || `localhost:${PORT}`;
+
+  // console.log(process.env);
+
+  const base_path = `http://${HOST}/api/${API_VER}`;
 
   const get = async (url: string, query?: string) => {
     const path = base_path + url;

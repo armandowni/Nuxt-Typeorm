@@ -5,9 +5,9 @@ import { entities } from "./src/db";
 export const config: DataSourceOptions = {
   name: "default",
   type: "postgres",
+  ...database,
   synchronize: true,
   logging: false,
   entities: entities,
   migrations: ["src/migration/**/*.ts"],
-  ...database,
 };
