@@ -8,7 +8,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "migration:generate": "npx typeorm-ts-node-esm migration:generate ./api/src/migration/migration -d ./api/data-source.ts",
-    "migration:run": "npx typeorm-ts-node-esm schema:sync -d ./api/data-source.ts"
+    "migration:run": "npx typeorm-ts-node-esm schema:sync -d ./api/data-source.ts",
+    "heroku-postbuild": "nuxt start"
   },
   "dependencies": {
     "@nuxtjs/fontawesome": "^1.1.2",
