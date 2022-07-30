@@ -1,5 +1,3 @@
-import { SERVER_HOST, SERVER_PORT } from "./api/const";
-
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -18,7 +16,12 @@ export default {
   ssr: true,
   target: "static",
   privateRuntimeConfig: {
-    baseURL: process.env.HOST || "localhost:3000"
+    baseURL: process.env.HOST,
+    DB_USERNAME: "",
+    DB_PASSWORD: "",
+    DB_HOST: "",
+    DB_DATABASE: "",
+    DB_PORT: null
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],

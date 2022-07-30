@@ -8,8 +8,6 @@ let HOST = "";
 export function useApi(config?: any) {
   HOST = nuxtConfig.privateRuntimeConfig.baseURL || `localhost:${PORT}`;
 
-  console.log()
-
   const base_path = `http://${HOST}/api/${API_VER}`;
 
   const get = async (url: string, query?: string) => {
