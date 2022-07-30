@@ -200,6 +200,8 @@ export default {
     },
   },
   async fetch() {
+    console.log(this.$config);
+    
     await this.getData();
   },
 };

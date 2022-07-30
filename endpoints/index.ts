@@ -7,7 +7,7 @@ let HOST = "";
 export function useApi(config?: any) {
   HOST = process.env.HOST || `localhost:${PORT}`;
 
-  // console.log(process.env);
+  // console.log(process.env)
 
   const base_path = `http://${HOST}/api/${API_VER}`;
 
