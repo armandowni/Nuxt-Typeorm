@@ -9,10 +9,19 @@ export const config: DataSourceOptions = {
     process.env.NODE_ENV == "production"
       ? nuxtConfig.privateRuntimeConfig.DB_USERNAME
       : "postgres",
-  port: process.env.NODE_ENV == "production"?nuxtConfig.privateRuntimeConfig.DB_PORT : 5432,
-  host: process.env.NODE_ENV == "production" ? nuxtConfig.privateRuntimeConfig.DB_HOST : "localhost",
-  password: process.env.NODE_ENV == "production" ? nuxtConfig.privateRuntimeConfig.DB_PASSWORD : "admin123",
-  database: process.env.NODE_ENV == "production" ? nuxtConfig.privateRuntimeConfig.DB_DATABASE : "testingdb",
+  port: 5432,
+  host:
+    process.env.NODE_ENV == "production"
+      ? nuxtConfig.privateRuntimeConfig.DB_HOST
+      : "localhost",
+  password:
+    process.env.NODE_ENV == "production"
+      ? nuxtConfig.privateRuntimeConfig.DB_PASSWORD
+      : "admin123",
+  database:
+    process.env.NODE_ENV == "production"
+      ? nuxtConfig.privateRuntimeConfig.DB_DATABASE
+      : "testingdb",
   synchronize: true,
   logging: false,
   entities: entities,
