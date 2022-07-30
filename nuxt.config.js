@@ -17,7 +17,7 @@ export default {
   },
   ssr: true,
   target: "static",
-  publicRuntimeConfig: {
+  privateRuntimeConfig: {
     baseURL: process.env.HOST || "localhost:3000"
   },
   // Global CSS: https://go.nuxtjs.dev/config-css

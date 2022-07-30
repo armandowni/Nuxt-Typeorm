@@ -1,13 +1,14 @@
 import axios from "axios";
+import nuxtConfig from "../nuxt.config";
 
 const API_VER = "v1";
 const PORT = 3000;
 let HOST = "";
 
 export function useApi(config?: any) {
-  HOST = process.env.HOST || `localhost:${PORT}`;
+  HOST = nuxtConfig.privateRuntimeConfig.baseURL || `localhost:${PORT}`;
 
-  // console.log(process.env)
+  console.log()
 
   const base_path = `http://${HOST}/api/${API_VER}`;
 
