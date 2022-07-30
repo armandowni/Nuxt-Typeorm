@@ -5,26 +5,19 @@ import { entities } from "./src/db";
 export const config: DataSourceOptions = {
   name: "default",
   type: "postgres",
-  username:
-    process.env.NODE_ENV == "production"
-      ? nuxtConfig.privateRuntimeConfig.DB_USERNAME
-      : "postgres",
+  username: "ndphgigmsldyrf",
   port: 5432,
-  host:
-    process.env.NODE_ENV == "production"
-      ? nuxtConfig.privateRuntimeConfig.DB_HOST
-      : "localhost",
-  password:
-    process.env.NODE_ENV == "production"
-      ? nuxtConfig.privateRuntimeConfig.DB_PASSWORD
-      : "admin123",
-  database:
-    process.env.NODE_ENV == "production"
-      ? nuxtConfig.privateRuntimeConfig.DB_DATABASE
-      : "testingdb",
+  host: "ec2-3-230-122-20.compute-1.amazonaws.com",
+  password: "2f86ab68c36d3be06b46dd7c10bd1422ffa920303040c3081fb48e823b54f913",
+  database: "d3guldico2husd",
   synchronize: true,
   logging: false,
   entities: entities,
   migrations: ["src/migration/**/*.ts"],
-  ...nuxtConfig.privateRuntimeConfig.DB_SSL,
+  // ssl: false,
+  extra: {
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  },
 };
