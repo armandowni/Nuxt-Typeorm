@@ -40,7 +40,7 @@
           <Modal :dialog="dialogAdd || dialogEdit">
             <v-card>
               <v-card-title class="">
-                {{ !dataForm.name || !dataForm.age ? "Add" : "Edit" }} Data
+                {{ isAddForm ? "Add" : "Edit" }} Data
               </v-card-title>
 
               <div class="pb-5 px-5">
