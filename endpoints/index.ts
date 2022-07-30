@@ -2,13 +2,9 @@ import axios from "axios";
 import nuxtConfig from "../nuxt.config";
 
 const API_VER = "v1";
-const PORT = 3000;
-let HOST = "";
 
 export function useApi(config?: any) {
-  HOST = nuxtConfig.privateRuntimeConfig.baseURL || `localhost:${PORT}`;
-
-  const base_path = `http://${HOST}/api/${API_VER}`;
+  const base_path = `http://${nuxtConfig.privateRuntimeConfig.baseURL}/api/${API_VER}`;
 
   const get = async (url: string, query?: string) => {
     const path = base_path + url;

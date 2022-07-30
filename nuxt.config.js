@@ -20,11 +20,11 @@ export default {
   target: "static",
   privateRuntimeConfig: {
     baseURL: process.env.HOST,
-    DB_USERNAME: "",
-    DB_PASSWORD: "",
-    DB_HOST: "",
-    DB_DATABASE: "",
-    DB_PORT: null
+    DB_USERNAME: "ndphgigmsldyrf",
+    DB_PASSWORD: "2f86ab68c36d3be06b46dd7c10bd1422ffa920303040c3081fb48e823b54f913",
+    DB_HOST: "ec2-3-230-122-20.compute-1.amazonaws.com",
+    DB_DATABASE: "d3guldico2husd",
+    DB_PORT: 5432
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
