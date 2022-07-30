@@ -13,6 +13,9 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
+  server: {
+    host: process.env.HOST,
+  },
   ssr: true,
   target: "static",
   privateRuntimeConfig: {
