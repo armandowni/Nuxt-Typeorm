@@ -20,6 +20,17 @@ export default {
       process.env.NODE_ENV == "production"
         ? "https://nuxt-typeorm.herokuapp.com"
         : "http://localhost:3000",
+    DB_SSL:
+      process.env.NODE_ENV == "production"
+        ? {
+            ssl: true,
+            extra: {
+              ssl: {
+                rejectUnauthorized: false,
+              },
+            },
+          }
+        : null,
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],

@@ -5,23 +5,11 @@ import { entities } from "./src/db";
 export const config: DataSourceOptions = {
   name: "default",
   type: "postgres",
-  username:
-    process.env.NODE_ENV == "production"
-      ? nuxtConfig.privateRuntimeConfig.DB_USERNAME
-      : "postgres",
+  username: "postgres",
   port: 5432,
-  host:
-    process.env.NODE_ENV == "production"
-      ? nuxtConfig.privateRuntimeConfig.DB_HOST
-      : "localhost",
-  password:
-    process.env.NODE_ENV == "production"
-      ? nuxtConfig.privateRuntimeConfig.DB_PASSWORD
-      : "admin123",
-  database:
-    process.env.NODE_ENV == "production"
-      ? nuxtConfig.privateRuntimeConfig.DB_DATABASE
-      : "testingdb",
+  host: "localhost",
+  password: "admin123",
+  database: "testingdb",
   synchronize: true,
   logging: false,
   entities: entities,
