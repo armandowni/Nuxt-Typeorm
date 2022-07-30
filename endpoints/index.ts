@@ -4,6 +4,7 @@ import nuxtConfig from "../nuxt.config";
 const API_VER = "v1";
 
 export function useApi(config?: any) {
+
   const base_path = `http://${nuxtConfig.privateRuntimeConfig.baseURL}/api/${API_VER}`;
 
   const get = async (url: string, query?: string) => {
