@@ -34,6 +34,8 @@ export default {
     "@nuxtjs/tailwindcss",
     "@nuxtjs/fontawesome",
     "@nuxtjs/vuetify",
+    '@fortawesome/free-solid-svg-icons',
+    "@fortawesome/free-brands-svg-icons"
   ],
   build: {},
   fontawesome: {
