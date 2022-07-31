@@ -2,8 +2,11 @@ import axios from "axios";
 import nuxtConfig from "../nuxt.config";
 
 const API_VER = "v1";
+let config = {
+  'Content-Type': 'application/json'
+}
 
-export function useApi(config?: any) {
+export function useApi() {
 
   const base_path = `${nuxtConfig.privateRuntimeConfig.baseURL}/api/${API_VER}`;
 
@@ -11,7 +14,7 @@ export function useApi(config?: any) {
     const path = base_path + url;
 
     const result = await axios
-      .get(path)
+      .get(path, { responseType: "json" })
       .then((result) => result.data)
       .catch((err) => err);
 
@@ -21,7 +24,7 @@ export function useApi(config?: any) {
     const path = base_path + url;
 
     const result = await axios
-      .post(path, data)
+      .post(path, data, { responseType: "json" })
       .then((result) => result.data)
       .catch((err) => err);
 
@@ -31,7 +34,7 @@ export function useApi(config?: any) {
     const path = base_path + url;
 
     const result = await axios
-      .put(path, data)
+      .put(path, data, { responseType: "json" })
       .then((result) => result.data)
       .catch((err) => err);
 
@@ -40,7 +43,7 @@ export function useApi(config?: any) {
   const del = async (url: string) => {
     const path = base_path + url;
     const result = await axios
-      .delete(path)
+      .delete(path, { responseType: "json" })
       .then((result) => result.data)
       .catch((err) => err);
 

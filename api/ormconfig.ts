@@ -5,14 +5,18 @@ import { entities } from "./src/db";
 export const config: DataSourceOptions = {
   name: "default",
   type: "postgres",
-  username: "postgres",
+  username: "ndphgigmsldyrf",
   port: 5432,
-  host: "localhost",
-  password: "admin123",
-  database: "testingdb",
+  host: "ec2-3-230-122-20.compute-1.amazonaws.com",
+  password: "2f86ab68c36d3be06b46dd7c10bd1422ffa920303040c3081fb48e823b54f913",
+  database: "d3guldico2husd",
   synchronize: true,
   logging: false,
   entities: entities,
   migrations: ["src/migration/**/*.ts"],
-  ...nuxtConfig.privateRuntimeConfig.DB_SSL,
+  extra: {
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  },
 };
