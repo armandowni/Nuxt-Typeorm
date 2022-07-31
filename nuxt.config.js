@@ -13,24 +13,11 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
-  ssr: true,
-  target: "static",
   privateRuntimeConfig: {
     baseURL:
       process.env.NODE_ENV == "production"
         ? "https://nuxt-typeorm.herokuapp.com"
         : "http://localhost:3000",
-    DB_SSL:
-      process.env.NODE_ENV == "production"
-        ? {
-            ssl: true,
-            extra: {
-              ssl: {
-                rejectUnauthorized: false,
-              },
-            },
-          }
-        : null,
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
@@ -48,11 +35,7 @@ export default {
     "@nuxtjs/fontawesome",
     "@nuxtjs/vuetify",
   ],
-  build: {
-    optimization: {
-      minimize: true,
-    },
-  },
+  build: {},
   fontawesome: {
     component: "Fa",
     suffix: false,
@@ -63,8 +46,8 @@ export default {
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["~/modules/api"],
+  modules: ["./modules/api"],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  watch: ["~/api/express/routes"],
+  watch: ["./api/express/routes"],
 };
