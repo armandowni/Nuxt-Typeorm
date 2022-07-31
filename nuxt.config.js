@@ -32,16 +32,12 @@ export default {
   buildModules: [
     "@nuxt/typescript-build",
     "@nuxtjs/tailwindcss",
-    "@nuxtjs/fontawesome",
     "@nuxtjs/vuetify",
   ],
   build: {},
-  fontawesome: {
-    component: "Fa",
-    suffix: false,
-    icons: {
-      solid: true,
-    },
+
+  vuetify: {
+    defaultAssets: { icons: "fa" },
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
