@@ -15,7 +15,7 @@ export default {
   },
 
   env: {
-    DB: {
+    DB: { // config for db production
       host: "",
       username: "",
       password: "",
