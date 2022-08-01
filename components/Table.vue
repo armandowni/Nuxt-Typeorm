@@ -9,10 +9,10 @@
       <template v-slot:[`item.actions`]="{ item }">
         <div class="flex justify-end gap-5">
           <a href="javascript:void(0)" v-on:click="editDialog(item)">
-            <fa :icon="['fas', 'pencil']" />
+            <v-icon small>fa-pencil</v-icon>
           </a>
           <a href="javascript:void(0)" v-on:click="delDialog(item)">
-            <fa :icon="['fas', 'trash']" />
+            <v-icon small>fa-trash</v-icon>
           </a>
         </div>
       </template>

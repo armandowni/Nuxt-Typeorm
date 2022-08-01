@@ -1,53 +1,50 @@
 import axios from "axios";
-import { SERVER_HOST, SERVER_PORT } from "../modules/const";
+import nuxtConfig from "../nuxt.config";
 
 const API_VER = "v1";
+const headers = { "content-type": "application/json" };
 
 export function useApi(config?: any) {
-  const base_path = `http://${SERVER_HOST}:${SERVER_PORT}/api/${API_VER}`;
+  
+  const base_path = `/api/${API_VER}`;
 
   const get = async (url: string, query?: string) => {
-    const path =  base_path + url;
-    // console.log("test");
+    const path = base_path + url;
 
     const result = await axios
-      .get(path)
+      .get(path, { headers: headers })
       .then((result) => result.data)
       .catch((err) => err);
-    // const result = await axios.get(base_path);
-    // console.log("test1");
 
     return result;
   };
   const post = async (url: string, data: any) => {
-    const path =  base_path + url;
-    
+    const path = base_path + url;
+
     const result = await axios
-      .post(path, data)
+      .post(path, data, { headers: headers })
       .then((result) => result.data)
       .catch((err) => err);
 
     return result;
   };
   const put = async (url: string, data: any) => {
-    const path =  base_path + url;
+    const path = base_path + url;
 
     const result = await axios
-      .put(path, data)
+      .put(path, data, { headers: headers })
       .then((result) => result.data)
       .catch((err) => err);
 
-    // return "";
     return result;
   };
   const del = async (url: string) => {
-    const path =  base_path + url;
+    const path = base_path + url;
     const result = await axios
-      .delete(path)
+      .delete(path, { headers: headers })
       .then((result) => result.data)
       .catch((err) => err);
 
-    // return "";
     return result;
   };
 

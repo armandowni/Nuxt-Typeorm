@@ -1,5 +1,3 @@
-import { SERVER_HOST, SERVER_PORT } from "./modules/const";
-
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -15,12 +13,21 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
-  server: {
-    host: SERVER_HOST,
-    port: SERVER_PORT,
+
+  env: {
+    DB: {
+      host: "",
+      username: "",
+      password: "",
+      database: "",
+      extra: {
+        ssl: {
+          rejectUnauthorized: false,
+        },
+      },
+    },
   },
-  ssr: true,
-  target: "static",
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
@@ -34,26 +41,22 @@ export default {
   buildModules: [
     "@nuxt/typescript-build",
     "@nuxtjs/tailwindcss",
-    "@nuxtjs/fontawesome",
-    "@nuxtjs/vuetify",
+    ["@nuxtjs/vuetify", { defaultAssets: { icons: "fa" } }],
   ],
+
   build: {
     optimization: {
-      minimize: true,
-    },
-  },
-  fontawesome: {
-    component: "Fa",
-    suffix: false,
-    icons: {
-      solid: true,
-      brands: true,
+      splitChunks: {
+        chunks: "all",
+        name: true,
+        cacheGroups: {},
+        maxSize: 350000,
+      },
     },
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["~/modules/api"],
+  modules: ["./modules/api"],
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  watch: ["~/api/express/routes"],
+  watch: ["./api/express/routes"],
 };

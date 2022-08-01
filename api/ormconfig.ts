@@ -1,25 +1,19 @@
 import { DataSourceOptions } from "typeorm";
-import {
-  DB_CONFIG_DATABASE,
-  DB_CONFIG_HOST,
-  DB_CONFIG_PASSWORD,
-  DB_CONFIG_PORT,
-  DB_CONFIG_SSL,
-  DB_CONFIG_USER,
-} from "../modules/const";
+import nuxtConfig from "../nuxt.config";
 import { entities } from "./src/db";
 
+const DB = nuxtConfig.env.DB;
 export const config: DataSourceOptions = {
   name: "default",
   type: "postgres",
-  host: DB_CONFIG_HOST,
-  port: DB_CONFIG_PORT,
-  username: DB_CONFIG_USER,
-  password: DB_CONFIG_PASSWORD,
-  database: DB_CONFIG_DATABASE,
+  port: 5432,
+  username: DB.username || "postgres",
+  host: DB.host || "localhost",
+  password: DB.password || "admin123",
+  database: DB.database || "testingdb",
   synchronize: true,
   logging: false,
   entities: entities,
   migrations: ["src/migration/**/*.ts"],
-  ssl: DB_CONFIG_SSL,
+  extra: !DB.database ? null : DB.extra,
 };

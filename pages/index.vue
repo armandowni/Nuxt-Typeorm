@@ -40,7 +40,7 @@
           <Modal :dialog="dialogAdd || dialogEdit">
             <v-card>
               <v-card-title class="">
-                {{ !dataForm.name || !dataForm.age ? "Add" : "Edit" }} Data
+                {{ isAddForm ? "Add" : "Edit" }} Data
               </v-card-title>
 
               <div class="pb-5 px-5">
@@ -157,11 +157,11 @@ export default {
     },
     async addData(data: any) {
       if (!data.age || !data.name) {
-        this.errorMessage = "Name or age cannot empty"
+        this.errorMessage = "Name or age cannot empty";
         setTimeout(() => {
-          this.errorMessage = ""
+          this.errorMessage = "";
         }, 5000);
-        return
+        return;
       }
       data.age = parseInt(data.age);
 
@@ -170,11 +170,11 @@ export default {
     },
     async editData(data: any) {
       if (!data.age || !data.name) {
-        this.errorMessage = "Name or age cannot empty"
+        this.errorMessage = "Name or age cannot empty";
         setTimeout(() => {
-          this.errorMessage = ""
+          this.errorMessage = "";
         }, 5000);
-        return
+        return;
       }
       data.age = parseInt(data.age);
       await api.put(`/test/${data?.id}`, data);
@@ -192,14 +192,14 @@ export default {
       this.dataForm.name = null;
       this.dataForm.age = null;
 
-      this.getData()
+      this.getData();
     },
     async getData() {
       this.resultDataTable = await api.get("/test");
       this.resultDataTable = this.resultDataTable[0];
     },
   },
-  async fetch() {
+  async mounted() {
     await this.getData();
   },
 };
