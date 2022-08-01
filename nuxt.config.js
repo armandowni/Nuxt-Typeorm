@@ -13,12 +13,7 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
-  privateRuntimeConfig: {
-    baseURL:
-      process.env.NODE_ENV == "production"
-        ? "https://nuxt-typeorm.herokuapp.com"
-        : "http://localhost:3000",
-  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
@@ -32,17 +27,22 @@ export default {
   buildModules: [
     "@nuxt/typescript-build",
     "@nuxtjs/tailwindcss",
-    "@nuxtjs/vuetify",
+    ["@nuxtjs/vuetify", { defaultAssets: { icons: "fa" } }],
   ],
-  build: {},
 
-  vuetify: {
-    defaultAssets: { icons: "fa" },
+  build: {
+    optimization: {
+      splitChunks: {
+        chunks: "all",
+        name: true,
+        cacheGroups: {},
+        maxSize: 350000,
+      },
+    },
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ["./modules/api"],
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   watch: ["./api/express/routes"],
 };
