@@ -15,7 +15,8 @@ export default {
   },
 
   env: {
-    DB: { // config for db production
+    DB: {
+      // config for db production
       host: "",
       username: "",
       password: "",
@@ -45,13 +46,10 @@ export default {
   ],
 
   build: {
-    optimization: {
-      splitChunks: {
-        chunks: "all",
-        name: true,
-        cacheGroups: {},
-        maxSize: 350000,
-      },
+    extend(config, { isClient }) {
+      if (isClient) {
+        config.performance.maxAssetSize = 450000;
+      }
     },
   },
 
