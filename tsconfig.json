@@ -11,6 +11,7 @@
       "ES5",
       "ES6"
     ],
+    "noUnusedLocals": false,
     "esModuleInterop": true,
     "allowJs": true,
     "sourceMap": true,
