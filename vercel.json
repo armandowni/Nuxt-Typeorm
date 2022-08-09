@@ -8,7 +8,7 @@
   ],
   "config": {
     "tscOptions": {
-      "sourceMap": false
+      "sourceMap": true
     }
   }
 }
