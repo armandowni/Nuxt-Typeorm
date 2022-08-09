@@ -17,10 +17,11 @@ export default {
   env: {
     DB: {
       // config for db production
-      host: "",
-      username: "",
-      password: "",
-      database: "",
+      host: "ec2-3-230-122-20.compute-1.amazonaws.com",
+      username: "d3guldico2husd",
+      password: "ndphgigmsldyrf",
+      database:
+        "2f86ab68c36d3be06b46dd7c10bd1422ffa920303040c3081fb48e823b54f913",
       extra: {
         ssl: {
           rejectUnauthorized: false,
@@ -42,7 +43,7 @@ export default {
   buildModules: [
     "@nuxt/typescript-build",
     "@nuxtjs/tailwindcss",
-    ["@nuxtjs/vuetify"],
+    "@nuxtjs/vuetify",
   ],
   vuetify: {
     defaultAssets: { icons: "fa" },
