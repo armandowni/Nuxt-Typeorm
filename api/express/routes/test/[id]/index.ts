@@ -16,7 +16,7 @@ export async function put(req: Request, res: Response) {
 }
 export async function del(req: Request, res: Response) {
   const id = parseInt(req.params.id);
-  let data = await testRepository.findOne({ where: { id: id } });
+  const data = await testRepository.findOne({ where: { id: id } });
 
   if (!data) throw new Error("404 data not found");
   await testRepository.softDelete(data.id);
