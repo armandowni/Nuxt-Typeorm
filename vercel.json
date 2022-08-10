@@ -9,6 +9,7 @@
       "use": "@nuxtjs/vercel-builder",
       "config": {
         "tscOptions": {
+          "path":"./tsconfig.json",
           "sourceMap": false
         }
       }
