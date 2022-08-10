@@ -52,13 +52,12 @@ export default {
     extend(config, { isClient }) {
       if (isClient) {
         config.performance.maxAssetSize = 450000;
-        config.devtool = "source-map";
       }
     },
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  // modules: ["./modules/api"],
+  modules: ["./modules/api"],
 
-  // watch: ["./api/express/routes"],
+  watch: ["./api/express/routes"],
 };
