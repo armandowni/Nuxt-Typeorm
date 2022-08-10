@@ -3,13 +3,13 @@
   "github": {
     "silent": true
   },
+  "path":"./tsconfig.json",
   "builds": [
     {
       "src": "nuxt.config.js",
       "use": "@nuxtjs/vercel-builder",
       "config": {
         "tscOptions": {
-          "path":"./tsconfig.json",
           "sourceMap": false
         }
       }
