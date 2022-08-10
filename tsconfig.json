@@ -4,13 +4,7 @@
     "jsx": "preserve",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "lib": [
-      "ESNext",
-      "ESNext.AsyncIterable",
-      "DOM",
-      "ES5",
-      "ES6"
-    ],
+    "lib": ["ESNext", "ESNext.AsyncIterable", "DOM", "ES5", "ES6"],
     "esModuleInterop": true,
     "allowJs": true,
     "sourceMap": true,
@@ -20,22 +14,10 @@
     "emitDecoratorMetadata": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "./*"
-      ],
-      "@/*": [
-        "./*"
-      ]
+      "~/*": ["./*"],
+      "@/*": ["./*"]
     },
-    "types": [
-      "@nuxt/types",
-      "@types/node",
-      "@nuxtjs/vuetify"
-    ]
+    "types": ["@nuxt/types", "@types/node", "@nuxtjs/vuetify"]
   },
-  "exclude": [
-    "node_modules",
-    ".nuxt",
-    "dist"
-  ],
+  "exclude": ["node_modules", ".nuxt", "dist"]
 }
