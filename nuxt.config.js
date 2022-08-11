@@ -57,8 +57,8 @@ export default {
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  // modules: ["./modules/api"],
-  serverMiddleware: ['./api', './api/index'],
+  modules: ["./modules/api"],
+  // serverMiddleware: ['./api', './api/index'],
 
   watch: ["./api/express/routes"],
 };
