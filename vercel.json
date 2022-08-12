@@ -5,13 +5,19 @@
       "src": "nuxt.config.js",
       "use": "@nuxtjs/vercel-builder",
       "config": {
-        "serverFiles": ["api/index.ts"]
+        "serverFiles": ["package.json"]
       }
-    },
+    }
+  ],
+  "routes": [
     {
-      "src": "api/index.ts",
-      "use": "@vercel/node",
-      "config": {}
+      "src": "/sw.js",
+      "continue": true,
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Service-Worker-Allowed": "/"
+      }
     }
   ]
 }
+
