@@ -10,7 +10,7 @@ export const config: DataSourceOptions = {
   host: DB?.host || "localhost",
   username: DB?.username || "postgres",
   password: DB?.password || "admin123",
-  database: DB?.database || "testingdb",
+  database: DB?.database || "postgres",
   synchronize: true,
   logging: false,
   entities: entities,
