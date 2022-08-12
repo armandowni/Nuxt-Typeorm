@@ -16,11 +16,11 @@ export default {
   env: {
     DB: {
       // config for db production
-      // host: "ec2-3-230-122-20.compute-1.amazonaws.com",
-      // username: "d3guldico2husd",
-      // password: "ndphgigmsldyrf",
+      // host: "",
+      // username: "",
+      // password: "",
       // database:
-      //   "2f86ab68c36d3be06b46dd7c10bd1422ffa920303040c3081fb48e823b54f913",
+      //   "",
       // extra: {
       //   ssl: {
       //     rejectUnauthorized: false,
@@ -57,7 +57,6 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ["./modules/api"],
-  // serverMiddleware: ['./api', './api/index'],
 
   watch: ["./api/express/routes"],
 };
