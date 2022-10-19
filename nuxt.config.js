@@ -13,27 +13,9 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
-  env: {
-    DB: {
-      // config for db production
-      // host: "",
-      // username: "",
-      // password: "",
-      // database:
-      //   "",
-      // extra: {
-      //   ssl: {
-      //     rejectUnauthorized: false,
-      //   },
-      // },
-    },
-  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
-  server: {
-    host: '127.0.0.1',
-  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -60,6 +42,6 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ["./modules/api"],
-
+  serverMiddleware: ["~/api"],
   watch: ["./api/express/routes"],
 };
