@@ -26,13 +26,19 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     "@nuxt/typescript-build",
-    "@nuxtjs/tailwindcss",
+    "@nuxt/postcss8",
     "@nuxtjs/vuetify",
   ],
   vuetify: {
     defaultAssets: { icons: "fa" },
   },
   build: {
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    },
     extend(config, { isClient }) {
       if (isClient) {
         config.performance.maxAssetSize = 450000;
