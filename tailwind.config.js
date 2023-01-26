@@ -1,14 +1,23 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./components/**/*.{js,vue,ts}",
-    "./layouts/**/*.vue",
-    "./pages/**/*.vue",
-    "./plugins/**/*.{js,ts}",
-    "./nuxt.config.{js,ts}",
+    "./components/**/*.{js,vue,ts,tsx}",
+    "./layouts/**/*.{js,vue,ts,tsx}",
+    "./pages/**/*.{vue,tsx}",
+    "./widget/**/*.{vue,tsx}",
+    'node_modules/vue-tailwind/dist/*.js'
   ],
   theme: {
-    extend: {},
+    extend: {
+      transitionProperty: {
+        height: "height",
+        spacing: "margin, padding",
+      },
+    },
   },
-  plugins: [],
-}
+  variants: {
+    transitionProperty: ["responsive", "motion-safe", "motion-reduce"],
+    extend: {
+      transitionProperty: ["hover", "focus"],
+    },
+  },
+};
