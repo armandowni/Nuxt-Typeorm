@@ -18,6 +18,11 @@ export const Test = new EntitySchema({
     age: {
       type: "int",
     },
-    ...BaseSchema
+    status: {
+      type: "int",
+      nullable: true,
+    },
+    // status 1 = from nuxt 2, status 2 = from nuxt 3
+    ...BaseSchema,
   },
 });
