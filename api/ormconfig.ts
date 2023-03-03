@@ -5,17 +5,12 @@ export const config: DataSourceOptions = {
   name: "default",
   type: "postgres",
   port: 5432,
-  host: "ec2-44-199-143-43.compute-1.amazonaws.com",
-  username: "amaewbbfiqhhbs",
-  password: "bfb49fb438cca7815bdfb9c0712cf54351cef93a156807ddac0e5c96490deba7",
-  database: "d2nmdu4he1vuf5",
+  host: DB?.host || "localhost",
+  username: DB?.username || "postgres",
+  password: DB?.password || "admin123",
+  database: DB?.database || "postgres",
   synchronize: true,
   logging: false,
   entities: entities,
   migrations: ["src/migration/**/*.ts"],
-  extra: {
-    ssl: {
-      rejectUnauthorized: false,
-    },
-  },
 };
