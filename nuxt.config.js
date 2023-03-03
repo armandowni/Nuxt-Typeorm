@@ -14,23 +14,8 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
 
-  env: {
-    DB: {
-      // config for db production
-      host: "",
-      username: "",
-      password: "",
-      database: "",
-      extra: {
-        ssl: {
-          rejectUnauthorized: false,
-        },
-      },
-    },
-  },
-
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ["./static/global.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -41,13 +26,19 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     "@nuxt/typescript-build",
-    "@nuxtjs/tailwindcss",
+    "@nuxt/postcss8",
     "@nuxtjs/vuetify",
   ],
   vuetify: {
     defaultAssets: { icons: "fa" },
   },
   build: {
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    },
     extend(config, { isClient }) {
       if (isClient) {
         config.performance.maxAssetSize = 450000;
@@ -57,6 +48,6 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   // modules: ["./modules/api"],
-
-  // watch: ["./api/express/routes"],
+  serverMiddleware: ["~/api"],
+  watch: ["./api/express/routes"],
 };

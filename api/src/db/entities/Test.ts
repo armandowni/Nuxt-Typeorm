@@ -4,7 +4,7 @@ import { BaseSchema } from "../interface/tracked";
 export const Test = new EntitySchema({
   schema: "nuxtTypeorm",
   name: "Test",
-  tableName: "test",
+  tableName: "Test",
   extends: "BaseSchema",
   columns: {
     id: {
@@ -16,8 +16,14 @@ export const Test = new EntitySchema({
       type: "varchar",
     },
     age: {
-      type: "int8",
+      type: "int",
+      nullable: true,
     },
-    ...BaseSchema
+    status: {
+      type: "int",
+      nullable: true,
+    },
+    // status 1 = from nuxt 2, status 2 = from nuxt 3
+    ...BaseSchema,
   },
 });

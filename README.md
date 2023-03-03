@@ -46,4 +46,4 @@ https://expressjs.com/
 ```
 
 
-## for website example -> https://nuxt-typeorm.herokuapp.com/
+## for website example -> https://nuxt-typeorm.vercel.app/
