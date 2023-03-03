@@ -17,6 +17,7 @@ export const Test = new EntitySchema({
     },
     age: {
       type: "int",
+      nullable: true,
     },
     status: {
       type: "int",
