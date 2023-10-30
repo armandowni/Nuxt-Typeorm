@@ -1,4 +1,4 @@
-import { sendMail } from "~/api/util/mail";
+import { sendMail } from "../../../util/mail";
 
 export const post = async (req, res) => {
   const data = req.body;
