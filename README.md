@@ -1,7 +1,6 @@
 # Template Project Nuxt-Typeorm-Express
 
-Hello guys this is a template project based nuxt framework. I add some framework like vuetify, express, and typeorm.
-I hope this template makes you easier to build a website. Enjoy this template guys
+The Nuxt-TypeORM-Express project template amalgamates the power of Nuxt.js, TypeORM, and Express to provide a comprehensive framework for building web applications. Nuxt.js, serving as the frontend framework, facilitates the creation of dynamic and engaging user interfaces with the Vue.js library. TypeORM, a robust Object-Relational Mapping (ORM) library for TypeScript and JavaScript, seamlessly integrates with Express, a fast and minimalist web framework for Node.js. This template offers a streamlined solution for developers aiming to build scalable, server-rendered applications with a robust database layer. By combining the frontend capabilities of Nuxt.js, the database handling capabilities of TypeORM, and the server-side functionalities of Express, this project template empowers developers to create modern, performant, and feature-rich web applications.
 
 ## Configuration Database
 
