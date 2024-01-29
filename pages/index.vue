@@ -112,7 +112,7 @@
 </template>
 
 <script lang="ts">
-import { useApi } from "../endpoints";
+import { useApi } from "../plugins/axios";
 
 const api = useApi();
 
