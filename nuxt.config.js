@@ -14,11 +14,11 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
   env: {
-    NUXT_API_SECRET: process.env.NUXT_API_SECRET || 'http://localhost:3000'
+    NUXT_API_SECRET: process.env.NUXT_API_SECRET || "http://localhost:3000",
   },
   css: ["./static/global.css"],
   components: true,
-  buildModules: ["@nuxt/typescript-build", "@nuxt/postcss8", "@nuxtjs/vuetify"],
+  buildModules: ["@nuxt/typescript-build", "@nuxtjs/vuetify"],
   vuetify: {
     defaultAssets: { icons: "fa" },
   },
