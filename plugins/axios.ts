@@ -1,17 +1,19 @@
 import axios from "axios";
-import nuxtConfig from "../nuxt.config";
+
+const api = axios.create({
+  baseURL: process.env.NUXT_API_SECRET,
+});
 
 const API_VER = "v1";
 const headers = { "content-type": "application/json" };
 
 export function useApi(config?: any) {
-  
   const base_path = `/api/${API_VER}`;
 
   const get = async (url: string, query?: string) => {
     const path = base_path + url;
 
-    const result = await axios
+    const result = await api
       .get(path, { headers: headers })
       .then((result) => result.data)
       .catch((err) => err);
@@ -21,7 +23,7 @@ export function useApi(config?: any) {
   const post = async (url: string, data: any) => {
     const path = base_path + url;
 
-    const result = await axios
+    const result = await api
       .post(path, data, { headers: headers })
       .then((result) => result.data)
       .catch((err) => err);
@@ -31,7 +33,7 @@ export function useApi(config?: any) {
   const put = async (url: string, data: any) => {
     const path = base_path + url;
 
-    const result = await axios
+    const result = await api
       .put(path, data, { headers: headers })
       .then((result) => result.data)
       .catch((err) => err);
@@ -40,7 +42,7 @@ export function useApi(config?: any) {
   };
   const del = async (url: string) => {
     const path = base_path + url;
-    const result = await axios
+    const result = await api
       .delete(path, { headers: headers })
       .then((result) => result.data)
       .catch((err) => err);
