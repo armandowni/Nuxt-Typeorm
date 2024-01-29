@@ -18,6 +18,7 @@ export default {
   },
   css: ["./static/global.css"],
   components: true,
+  ssr: false,
   buildModules: ["@nuxt/typescript-build", "@nuxtjs/vuetify"],
   vuetify: {
     defaultAssets: { icons: "fa" },
