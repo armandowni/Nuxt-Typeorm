@@ -1,6 +1,6 @@
 # Template Project Nuxt2-Vuetify
 
-Hello guys this is a template project based nuxt framework. I add some framework like vuetify, express, and typeorm.
+Hello guys this is a template project based nuxt framework. I add a library like vuetify.
 I hope this template makes you easier to build a website. Enjoy this template guys
 
 ## Build Setup Nuxt
@@ -31,3 +31,4 @@ https://nuxtjs.org/
 https://typeorm.io/
 
 ## for website example -> https://nuxt-typeorm.vercel.app/
+```
