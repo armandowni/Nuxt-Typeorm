@@ -1,4 +1,5 @@
-# Template Project Nuxt-Typeorm-Express
+# Template Project Nuxt2-Vuetify
+
 Hello guys this is a template project based nuxt framework. I add some framework like vuetify, express, and typeorm.
 I hope this template makes you easier to build a website. Enjoy this template guys
 
@@ -19,18 +20,6 @@ $ yarn start
 $ yarn generate
 ```
 
-## Build Setup Typeorm
-
-```bash
-
-# automatic build migration
-$ yarn migration:generate
-
-# run migration
-$ yarn migration:run
-
-```
-
 ## For documentation
 
 ```bash
@@ -38,12 +27,7 @@ $ yarn migration:run
 # nuxt
 https://nuxtjs.org/
 
-# typeorm
+# vuetify
 https://typeorm.io/
-
-# express
-https://expressjs.com/
-```
-
 
 ## for website example -> https://nuxt-typeorm.vercel.app/

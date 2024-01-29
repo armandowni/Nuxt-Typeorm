@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "nuxt-typeorm",
+    title: "nuxt-vuetify",
     htmlAttrs: {
       lang: "en",
     },
@@ -13,22 +13,12 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
-
-  // Global CSS: https://go.nuxtjs.dev/config-css
+  env: {
+    NUXT_API_SECRET: process.env.NUXT_API_SECRET || 'http://localhost:3000'
+  },
   css: ["./static/global.css"],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
-
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    "@nuxt/typescript-build",
-    "@nuxt/postcss8",
-    "@nuxtjs/vuetify",
-  ],
+  buildModules: ["@nuxt/typescript-build", "@nuxt/postcss8", "@nuxtjs/vuetify"],
   vuetify: {
     defaultAssets: { icons: "fa" },
   },
@@ -45,9 +35,4 @@ export default {
       }
     },
   },
-
-  // Modules: https://go.nuxtjs.dev/config-modules
-  // modules: ["./modules/api"],
-  serverMiddleware: ["~/api"],
-  watch: ["./api/express/routes"],
 };

@@ -21,12 +21,9 @@
             href="https://typeorm.io/"
             target="_blank"
           >
-            <LogoTypeorm />
+            <LogoVuetify />
           </a>
         </div>
-        <span class="text-center font-extrabold text-xl"
-          >and many more ...</span
-        >
       </div>
       <div class="mt-5 bg-white shadow sm:rounded-lg px-5 py-2 w-auto">
         <div class="font-bold text-2xl pb-3">Here the example</div>
@@ -164,6 +161,7 @@ export default {
         return;
       }
       data.age = parseInt(data.age);
+      data.status |= 1;
 
       await api.post(`/test`, data);
       this.cancel();
@@ -196,7 +194,7 @@ export default {
     },
     async getData() {
       this.resultDataTable = await api.get("/test");
-      this.resultDataTable = this.resultDataTable[0];
+      this.resultDataTable = this.resultDataTable.data;
     },
   },
   async mounted() {
