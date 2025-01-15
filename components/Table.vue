@@ -1,13 +1,6 @@
 <template>
-  <div
-    class="border-2 border-black rounded-md h-auto overflow-y-scroll w-full max-h-40"
-  >
-    <v-data-table
-      :headers="headers"
-      :items="dataTable"
-      :items-per-page="5"
-      class="elevation-1 text-start"
-    >
+  <div class="border-2 border-black rounded-md h-auto overflow-y-scroll w-full max-h-40">
+    <v-data-table :headers="headers" :items="dataTable" :items-per-page="5" class="elevation-1 text-start">
       <template v-slot:[`item.from`]="{ item }">
         <div>
           <div class="">
@@ -15,8 +8,8 @@
               (item.status & 2) == 2
                 ? "Nuxt App 3"
                 : (item.status & 1) == 1
-                ? "Nuxt App 2"
-                : "Unknown"
+                  ? "Nuxt App 2"
+                  : (item.status & 4) == 4 ? "Nextjs App" : (item.status & 1) == 1 ? "Reactjs-Generouted App" : "Unknown"
             }}
           </div>
         </div>

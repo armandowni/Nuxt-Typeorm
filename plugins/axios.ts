@@ -5,10 +5,13 @@ const api = axios.create({
 });
 
 const API_VER = "v1";
+const PATHNAME = process.env.NUXT_API_PATHNAME;
 const headers = { "content-type": "application/json" };
 
 export function useApi(config?: any) {
-  const base_path = `/api/${API_VER}`;
+  console.log(PATHNAME);
+
+  const base_path = `${PATHNAME}/api/${API_VER}`;
 
   const get = async (url: string, query?: string) => {
     const path = base_path + url;

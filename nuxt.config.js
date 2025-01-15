@@ -15,6 +15,7 @@ export default {
   },
   env: {
     NUXT_API_SECRET: process.env.NUXT_API_SECRET || "http://localhost:3000",
+    NUXT_API_PATHNAME: process.env.NUXT_API_PATHNAME || "http://localhost:3000",
   },
   css: ["./static/global.css"],
   components: true,
